@@ -1,6 +1,7 @@
-export async function load(){
-    const res = await fetch("https://fdnd.directus.app/items/person?fields=*&filter[squads][squad_id][cohort][_eq]=2627");
-    const data = await res.json();
- 
-    return{persons: data.data}
+export async function load() {
+  const id = 275;
+  const res = await fetch(`https://fdnd.directus.app/items/person/${id}`);
+  const data = await res.json();
+
+  return { person: data.data };
 }
