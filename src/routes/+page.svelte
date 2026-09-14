@@ -2,27 +2,43 @@
   let { data } = $props();
 
   const profile = data.person;
+
+  const birthdate = new Date(profile.birthdate);
+  const today = new Date();
+
+  let age = today.getFullYear() - birthdate.getFullYear();
+
+  if (
+    today.getMonth() < birthdate.getMonth() ||
+    (today.getMonth() === birthdate.getMonth() &&
+      today.getDate() < birthdate.getDate())
+  ) {
+    age--;
+  }
 </script>
 
 
 <main class="profile-page">
-    <section class="profile-card" aria-labelledby="profile-name">
+  <section class="profile-card">
+    <section class="profile-intro" aria-labelledby="profile-name">
         <div class="profile-heading">
             <figure class="avatar">
                 <img
-                    src={profile.avatar}
-                    alt={`Profielfoto van ${profile.name}`}
+                  src={profile.avatar}
+                  alt={`Profielfoto van ${profile.name}`}
+                  height="200"
+                  width="200"
                 />
             </figure>
             
             <div class="profile-title">
                 <h1 id="profile-name">{profile.name}</h1>
-                <p>00 jaar</p>
+                <p>{age} jaar</p>
             </div>
 
             <a class="scroll-cue" href="#overzicht">
-                <span>Scroll naar beneden</span>
-                <span class="scroll-cue__icon" aria-hidden="true">↓</span>
+              <span>Scroll naar beneden</span>
+              <span class="scroll-cue__icon" aria-hidden="true">↓</span>
             </a>
         </div>
     </section>
@@ -34,23 +50,23 @@
 
         <div class="info-grid">
           <article class="info-card">
-            <span class="info-card__number">01</span>
-            <h2>Info 01</h2>
+            <h2 class="info-card-name">Nickname</h2>
+            <p>Info 01</p>
           </article>
 
           <article class="info-card">
-            <span class="info-card__number">02</span>
-            <h2>Info 02</h2>
+             <h2 class="info-card-name">Hobby</h2>
+             <p>Info 02</p>
           </article>
 
           <article class="info-card">
-            <span class="info-card__number">03</span>
-            <h2>Info 03</h2>
+            <h2 class="info-card-name">.</h2>
+            <p>Info 01</p>
           </article>
 
           <article class="info-card">
-            <span class="info-card__number">04</span>
-            <h2>Info 04</h2>
+            <h2 class="info-card-name">Nickname</h2>
+            <p>Info 01</p>
           </article>
         </div>
 
@@ -65,4 +81,154 @@
 
         <a class="back-to-top" href="#bovenaan">↑ Terug naar boven</a>
       </section>
+    </section>
 </main>
+
+<style>
+
+  .profile-page{
+    min-height: 100vh;
+    padding: 2rem 1rem;
+    background: #f1f1f1;
+  }
+
+  .profile-card{
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 2rem;
+    overflow: hidden;
+  }
+
+  .profile-intro {
+    min-height: 100vh;
+    padding: 2rem 1.5rem;
+}
+
+.profile-heading {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.avatar {
+    width: 180px;
+    height: 180px;
+    margin: 0 0 1.5rem;
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.profile-title {
+    text-align: center;
+}
+
+.profile-title h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+.profile-title p {
+    margin: 0.25rem 0 0;
+    color: #777;
+}
+
+.scroll-cue {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 4rem;
+    color: #999;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+}
+
+.scroll-cue__icon {
+    display: grid;
+    place-items: center;
+    width: 2rem;
+    height: 2rem;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+}
+
+.profile-details {
+    padding: 2rem 1.5rem 4rem;
+}
+
+.section-heading {
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #ddd;
+}
+
+.section-heading p {
+    margin: 0 0 0.75rem;
+    color: #999;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+.info-grid {
+    display: grid;
+    gap: 1rem;
+}
+
+.info-card {
+    min-height: 100px;
+    padding: 1.25rem;
+    border: 1px solid #e5e5e5;
+    border-radius: 0.75rem;
+}
+
+.info-card-name {
+    margin: 0 0 0.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.info-card p {
+    margin: 0;
+    color: #777;
+}
+
+.bio {
+    margin-top: 3rem;
+    padding: 1.25rem;
+    border: 1px solid #e5e5e5;
+    border-radius: 0.75rem;
+}
+
+.bio h2 {
+    margin: 0 0 0.75rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #777;
+}
+
+.bio p {
+    margin: 0;
+    line-height: 1.6;
+    color: #666;
+}
+
+.back-to-top {
+    display: block;
+    width: fit-content;
+    margin: 2.5rem auto 0;
+    color: #aaa;
+    text-decoration: none;
+    font-size: 0.85rem;
+}
+
+</style>
