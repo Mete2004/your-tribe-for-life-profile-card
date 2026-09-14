@@ -19,7 +19,7 @@
 
 
 <main class="profile-page">
-  <section class="profile-card">
+  <section class="profile-card" id="bovenaan">
     <section class="profile-intro" aria-labelledby="profile-name">
         <div class="profile-heading">
             <figure class="avatar">
