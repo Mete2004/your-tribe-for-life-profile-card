@@ -38,7 +38,7 @@
 
             <a class="scroll-cue" href="#overzicht">
               <span>Scroll naar beneden</span>
-              <span class="scroll-cue__icon" aria-hidden="true">↓</span>
+              <span class="scroll-cue__icon">↓</span>
             </a>
         </div>
     </section>
@@ -51,32 +51,28 @@
         <div class="info-grid">
           <article class="info-card">
             <h2 class="info-card-name">Nickname</h2>
-            <p>Info 01</p>
+            <p>{profile.nickname}</p>
           </article>
 
           <article class="info-card">
-             <h2 class="info-card-name">Hobby</h2>
-             <p>Info 02</p>
+             <h2 class="info-card-name">Favoriete dier</h2>
+             <p>{profile.fav_animal}</p>
           </article>
 
           <article class="info-card">
-            <h2 class="info-card-name">.</h2>
-            <p>Info 01</p>
+            <h2 class="info-card-name">Woonplaats</h2>
+            <p>{profile.residency}</p>
           </article>
 
           <article class="info-card">
-            <h2 class="info-card-name">Nickname</h2>
-            <p>Info 01</p>
+            <h2 class="info-card-name">Github</h2>
+            <p>{profile.github_handle}</p>
           </article>
         </div>
 
         <article class="bio">
           <h2>Korte biografie</h2>
-          <p>
-            Korte voorbeeldtekst over dit profiel. Dit is een rustige en neutrale
-            toelichting ontworpen voor demonstratie binnen een semantische
-            schoolopdracht.
-          </p>
+          <p>{profile.bio}</p>
         </article>
 
         <a class="back-to-top" href="#bovenaan">↑ Terug naar boven</a>
