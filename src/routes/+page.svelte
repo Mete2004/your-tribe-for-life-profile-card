@@ -84,7 +84,7 @@
 
   .profile-page{
     min-height: 100vh;
-    padding: 2rem 1rem;
+    padding: 3rem 2rem;
     background: #f1f1f1;
   }
 
@@ -187,8 +187,8 @@
 }
 
 .info-card-name {
-    margin: 0 0 0.5rem;
-    font-size: 1rem;
+    margin: 0 0 1rem;
+    font-size: 1.1rem;
     font-weight: 500;
 }
 
