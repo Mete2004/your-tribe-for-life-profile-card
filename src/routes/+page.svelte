@@ -118,6 +118,12 @@
 }
 
 .avatar {
+    animation-name: profile-image-shrink;
+    animation-timing-function: linear;
+    animation-timeline: scroll(root block);
+    /* Scrollt mee met de verticale scroll van de pagina */
+    animation-range: 0 55%;
+
     width: 180px;
     height: 180px;
     margin: 0 0 1.5rem;
@@ -125,6 +131,17 @@
     @media (min-width: 768px) {
         width: 220px;
         height: 220px;
+        animation-range: 0% 80%;
+    }
+}
+
+@keyframes profile-image-shrink {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(0.65);
     }
 }
 
@@ -137,7 +154,28 @@
 }
 
 .profile-title {
+    animation-name: profile-title-move;
+    animation-timing-function: linear;
+    animation-timeline: scroll(root block);
+    animation-range: 0 55%;
+
     text-align: center;
+
+    @media (min-width: 768px) {
+        animation-range: 0% 90%;
+    }
+}
+
+@keyframes profile-title-move {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    to {
+        opacity: .3;
+        transform: translateY(-40px);
+    }
 }
 
 .profile-title h1 {
@@ -164,6 +202,25 @@
     text-decoration: none;
     text-transform: uppercase;
     font-size: 0.75rem;
+
+    animation-name: scroll-cue-fade;
+    animation-timing-function: linear;
+    animation-timeline: scroll(root block);
+    animation-range: 0 55%;
+
+    @media (min-width: 768px) {
+        animation-range: 0% 80%;
+    }
+}
+
+@keyframes scroll-cue-fade {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
 }
 
 .scroll-cue__icon {
@@ -178,8 +235,25 @@
 .profile-details {
     padding: 2rem 1.5rem 4rem;
 
+    animation-name: details-reveal;
+    animation-timing-function: linear;
+    animation-timeline: scroll(root block);
+    animation-range: 0% 50%;
+
     @media (min-width: 768px) {
         padding: 3rem;
+    }
+}
+
+@keyframes details-reveal {
+    from {
+        opacity: 0;
+        transform: translateY(200px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
@@ -210,6 +284,27 @@
     padding: 1.25rem;
     border: 1px solid #e5e5e5;
     border-radius: 0.75rem;
+
+    animation-name: info-card-reveal;
+    animation-timing-function: linear;
+    animation-timeline: scroll(root block);
+    animation-range: 0% 60%;
+
+    @media (min-width: 768px) {
+        animation-range: 0% 90%;
+    }
+}
+
+@keyframes info-card-reveal {
+    from {
+        opacity: 0.2;
+        transform: translateY(80px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .info-card-name {
