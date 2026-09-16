@@ -86,6 +86,10 @@
     min-height: 100vh;
     padding: 3rem 2rem;
     background: #f1f1f1;
+
+    @media (min-width: 768px) {
+         padding: 3rem;
+    }
   }
 
   .profile-card{
@@ -99,6 +103,10 @@
   .profile-intro {
     min-height: 100vh;
     padding: 2rem 1.5rem;
+
+    @media (min-width: 768px) {
+        padding: 3rem;
+    }
 }
 
 .profile-heading {
@@ -113,6 +121,11 @@
     width: 180px;
     height: 180px;
     margin: 0 0 1.5rem;
+
+    @media (min-width: 768px) {
+        width: 220px;
+        height: 220px;
+    }
 }
 
 .avatar img {
@@ -130,10 +143,14 @@
 .profile-title h1 {
     margin: 0;
     font-size: 2rem;
+
+    @media (min-width: 768px) {
+        font-size: 2.5rem;
+    }
 }
 
 .profile-title p {
-    margin: 0.25rem 0 0;
+    margin: .75rem 0 0;
     color: #777;
 }
 
@@ -160,6 +177,10 @@
 
 .profile-details {
     padding: 2rem 1.5rem 4rem;
+
+    @media (min-width: 768px) {
+        padding: 3rem;
+    }
 }
 
 .section-heading {
@@ -177,6 +198,11 @@
 .info-grid {
     display: grid;
     gap: 1rem;
+
+    @media (min-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
 }
 
 .info-card {
