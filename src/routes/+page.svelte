@@ -189,7 +189,7 @@
 
 .profile-title p {
     margin: .75rem 0 0;
-    color: #777;
+    color: #333333;
 }
 
 .scroll-cue {
@@ -198,7 +198,7 @@
     align-items: center;
     gap: 0.75rem;
     margin-top: 4rem;
-    color: #999;
+    color: #313131;
     text-decoration: none;
     text-transform: uppercase;
     font-size: 0.75rem;
