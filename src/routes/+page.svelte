@@ -128,6 +128,14 @@
     height: 180px;
     margin: 0 0 1.5rem;
 
+    @media (prefers-reduced-motion: no-preference) {
+        animation-name: profile-image-shrink;
+        animation-timing-function: linear;
+        /* Scrollt mee met de verticale scroll van de pagina */
+        animation-timeline: scroll(root block);
+        animation-range: 0 55%;
+    }
+
     @media (min-width: 768px) {
         width: 220px;
         height: 220px;
@@ -154,12 +162,15 @@
 }
 
 .profile-title {
-    animation-name: profile-title-move;
-    animation-timing-function: linear;
-    animation-timeline: scroll(root block);
-    animation-range: 0 55%;
 
     text-align: center;
+
+    @media (prefers-reduced-motion: no-preference) {
+        animation-name: profile-title-move;
+        animation-timing-function: linear;
+        animation-timeline: scroll(root block);
+        animation-range: 0 55%;
+    }
 
     @media (min-width: 768px) {
         animation-range: 0% 90%;
@@ -203,10 +214,12 @@
     text-transform: uppercase;
     font-size: 0.75rem;
 
-    animation-name: scroll-cue-fade;
-    animation-timing-function: linear;
-    animation-timeline: scroll(root block);
-    animation-range: 0 55%;
+     @media (prefers-reduced-motion: no-preference) {
+        animation-name: scroll-cue-fade;
+        animation-timing-function: linear;
+        animation-timeline: scroll(root block);
+        animation-range: 0 55%;
+     }
 
     @media (min-width: 768px) {
         animation-range: 0% 80%;
@@ -235,10 +248,12 @@
 .profile-details {
     padding: 2rem 1.5rem 4rem;
 
-    animation-name: details-reveal;
-    animation-timing-function: linear;
-    animation-timeline: scroll(root block);
-    animation-range: 0% 50%;
+    @media (prefers-reduced-motion: no-preference) {
+        animation-name: details-reveal;
+        animation-timing-function: linear;
+        animation-timeline: scroll(root block);
+        animation-range: 0% 50%;
+    }
 
     @media (min-width: 768px) {
         padding: 3rem;
@@ -285,10 +300,12 @@
     border: 1px solid #e5e5e5;
     border-radius: 0.75rem;
 
-    animation-name: info-card-reveal;
-    animation-timing-function: linear;
-    animation-timeline: scroll(root block);
-    animation-range: 0% 60%;
+    @media (prefers-reduced-motion: no-preference) {
+        animation-name: info-card-reveal;
+        animation-timing-function: linear;
+        animation-timeline: scroll(root block);
+        animation-range: 0% 60%;
+    }
 
     @media (min-width: 768px) {
         animation-range: 0% 90%;
